@@ -4,8 +4,6 @@ import json
 from botocore.exceptions import ClientError
 from typing import Dict # used for type hints
 
-
-
 class Utils:
     
     #  Returns the value a given secret stored in AWS Secrets Manager
