@@ -1,9 +1,10 @@
 
 import boto3
 import json
+from botocore.exceptions import ClientError
 
 #  Returns the value a given secret
-def get_secret(secret_name):
+def get_secret(secret_name:str):
 
     region_name = "us-east-1"
 
@@ -27,7 +28,4 @@ def get_secret(secret_name):
     secret = get_secret_value_response['SecretString']
 
     # Converts string to json/dict and returns it
-    return json.loads(secret)[secret_name]
-
-
-print('hello world')
+    return json.loads(secret)
